@@ -6,10 +6,6 @@ $id = $post["id"];
 $created_user_id = $post["created_user_id"];
 $method = "/api/v4/leads";
 
-    $f = fopen("new_file.txt", 'w');
-    fwrite($f, $subdomain.$method.$access_token);
-    fclose($f);
-
 if ($created_user_id != "0") {
     
     $data = [

@@ -1,6 +1,5 @@
 <?php 
 class Bitrix extends Form{
-    //private $method = "crm.deal.add"; /*"https://b24-l7tyhg.bitrix24.ru/rest/1/qjl5mtkf1pt66473/crm.deal.add";*/
 
     function __construct(){}
 
@@ -26,28 +25,13 @@ class Bitrix extends Form{
             "fields"=>[
                 "TITLE" => "Заявка с сайта ".date("d.m.Y / H:i"),
                 "COMMENTS" => parent::$comment,
-                "CONTACT_ID" => $out["result"]
+                "CONTACT_ID" => $out["result"],
+                "UF_CRM_1727620247" => "Сайт"
             ],
             "params" => ["REGISTER_SONET_EVENT" => "Y"]
         ];
 
         $out = $this->request($data, "crm.deal.add");
-        
-        // print_r($out);
-
-        /* 
-        { 
-			"NAME": "Глеб", 
-			"SECOND_NAME": "Егорович", 
-			"LAST_NAME": "Титов", 
-			"OPENED": "Y", 
-			"ASSIGNED_BY_ID": 1, 
-			"TYPE_ID": "CLIENT",
-			"SOURCE_ID": "SELF",
-			"PHOTO": { "fileData": document.getElementById('photo') },
-			"PHONE": [ { "VALUE": "555888", "VALUE_TYPE": "WORK" } ] 	
-		},
-        */
         
     }
     

@@ -57,7 +57,7 @@ if ($dataToken["endTokenTime"] - 60 < time()) {
 
     $arrParamsAmo = json_encode($arrParamsAmo);
 
-    $f = fopen($token_file, 'w');
+    $f = fopen($_SERVER['DOCUMENT_ROOT'].'/'.$token_file, 'w');
     fwrite($f, $arrParamsAmo);
     fclose($f);
 
